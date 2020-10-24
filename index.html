@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Global clicker v2</title>
+        <script src="odometer.js"></script>
+        <link rel="stylesheet" href="odometer.css">
+    </head>
+    <body>
+        <h1><big>counting till world ends</big></h1><br>
+        <h1 id="o" class="odometer"></h1>
+        <h1><small>how much will it reach</small></h1>
+        <br>
+        <button onclick="v()">Click me to click</button>
+        
+    </body>
+    <style>
+        @font-face {
+          font-family: Varela Round;
+            src: url(https://mixerno.space/fonts/VarelaRound-Regular.ttf);
+        }
+body{
+    text-align: center;
+    background-color:rgb(42, 41, 43);
+    color:white;
+    font-family: Varela Round;
+    
+}
+#y {
+    margin-top: 20px;
+    font-size: 50px;
+}
+#r{
+    font-size: 60px;
+}
+h1 {
+    font-size: 100px;
+}
+    </style>
+    <script>
+gp();
+setInterval(gp, 500);
+function v() {
+    var request = new XMLHttpRequest();
+    request.open("POST", "https://mixerno.space/clicker");
+    request.send();
+}
+function gp() {
+    var request = new XMLHttpRequest();
+    request.addEventListener("load",z);
+    request.open("GET", "https://mixerno.space/clicker");
+    request.send();
+}
+function z() {
+    var points = this.response;
+    var json = JSON.
+    console.log(points)
+    o.innerHTML = points;
+}
+
+var count = 0;
+setInterval(function() {
+count++
+o.innerHTML = count
+}, 500)
+ 
+    </script>
+</html>
